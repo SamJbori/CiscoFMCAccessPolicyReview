@@ -49,7 +49,7 @@ def inputWindow():
     uName.grid(row=1, column=1)
     pWord = tk.Entry(master)
     pWord.grid(row=2, column=1)
-    #pWord.config(show='W')
+    pWord.config(show='W')
     orgID = tk.Entry(master)
     orgID.grid(row=3, column=1)
 
@@ -334,9 +334,7 @@ def writeReviewFile(aceEntries):
 
 
 
-if __name__ is not '__main__':
-    sys.exit()
-
+# Begin main section
 timeStamp = time.time()  # Recover mechanism against HTTP 429 by the FMC
 
 # System Access Global Variables!
