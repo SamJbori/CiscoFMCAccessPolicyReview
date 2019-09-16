@@ -1,11 +1,11 @@
-/home/samuel/venv/py3.6/bin/python /snap/pycharm-community/150/helpers/pydev/pydevd.py --multiproc --qt-support=auto --client 127.0.0.1 --port 42611 --file /home/samuel/PycharmProjects/CiscoFMCAccessPolicyReview/FMCAPIStaging.py
-pydev debugger: process 27658 is connecting
-
+/home/sam/venv/py3.6/bin/python /snap/pycharm-community/150/helpers/pydev/pydevd.py --multiproc --qt-support=auto --client 127.0.0.1 --port 43613 --file /home/samuel/PycharmProjects/CiscoFMCAccessPolicyReview/FMCAPIStaging.py
 Connected to pydev debugger (build 192.6603.34)
+pydev debugger: process 448 is connecting
+
 Checking for config file...
 Config file found, processing saved information...
 Config file loaded... DOESN'T GRANTEES CORRECT DATA, DELETE config.json TO START FRESH...
-Authentication Token retrieved: ********-****-****-****-****8a9683b8
+Authentication Token retrieved: ********-****-****-****-****531212bd
 API Call pulled successfully...
 Policy found, adding 005056BB-0B24-0ed3-0000-867583394493 AccessPolicy AccessPolicy-veer-test-1
 Policy found, adding 005056BB-0B24-0ed3-0000-871878361667 AccessPolicy AccessPolicy-veer-test-2
@@ -83,19 +83,19 @@ Policy found, adding 005056BB-0B24-0ed3-0000-858993570117 AccessPolicy VpaslavTe
 Policy found, adding 005056BB-0B24-0ed3-0000-858993537963 AccessPolicy Wiki
 Importing Policy 005056BB-0B24-0ed3-0000-867583394493 AccessPolicy-veer-test-1
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484624 AccessRule Product_Vpn_TEST
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484626 AccessRule Product_Vpn_TEST (1)
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484627 AccessRule Product_Vpn_TEST (2)
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484624 AccessRule Product_Vpn_TEST
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484626 AccessRule Product_Vpn_TEST (1)
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484627 AccessRule Product_Vpn_TEST (2)
 Importing Policy 005056BB-0B24-0ed3-0000-871878361667 AccessPolicy-veer-test-2
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484628 AccessRule Rule Without Object
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484629 AccessRule Rule1
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484630 AccessRule Rule2
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484635 AccessRule karimtest
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484636 AccessRule karimtest2
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484637 AccessRule karimtest3
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484638 AccessRule karimtest4
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484639 AccessRule karimtest5
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484628 AccessRule Rule Without Object
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484629 AccessRule Rule1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484630 AccessRule Rule2
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484635 AccessRule karimtest
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484636 AccessRule karimtest2
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484637 AccessRule karimtest3
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484638 AccessRule karimtest4
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484639 AccessRule karimtest5
 Importing Policy 005056BB-0B24-0ed3-0000-871878361768 AccessPolicy-veer-test-3
 API Call pulled successfully...
 Dummy policy AccessPolicy-veer-test-3 - no entries - Skipping
@@ -107,22 +107,22 @@ API Call pulled successfully...
 Dummy policy AccessPolicy-veer-test-Postman - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-867583400843 AccessPolicy1
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268483639 AccessRule Test
+ACE found, adding 005056BB-0B24-0ed3-0000-000268483639 AccessRule Test
 Importing Policy 005056BB-0B24-0ed3-0000-871878378017 AccessPolicy1_Test
 API Call pulled successfully...
 Dummy policy AccessPolicy1_Test - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-863288498942 AccessPolicy29
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484631 AccessRule test rule 1
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484632 AccessRule test rule 2
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484633 AccessRule test rule 3
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484634 AccessRule test rule 4
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484631 AccessRule test rule 1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484632 AccessRule test rule 2
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484633 AccessRule test rule 3
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484634 AccessRule test rule 4
 Importing Policy 005056BB-0B24-0ed3-0000-863288501657 AccessPolicyDemo
 API Call pulled successfully...
 Dummy policy AccessPolicyDemo - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-858993537481 AccessPolicyName
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482606 AccessRule Test 1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482606 AccessRule Test 1
 Importing Policy 005056BB-0B24-0ed3-0000-858993535988 AccessPolicyNameyahoo
 API Call pulled successfully...
 Dummy policy AccessPolicyNameyahoo - no entries - Skipping
@@ -143,21 +143,21 @@ API Call pulled successfully...
 Dummy policy api-lab - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-863288428281 BL-Test
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482572 AccessRule BL-ACI-Test-RULE-0
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482568 AccessRule BL-ACI-Test-RULE-1
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482569 AccessRule BL-ACI-Test-RULE-2
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482570 AccessRule BL-ACI-Test-RULE-3
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482572 AccessRule BL-ACI-Test-RULE-0
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482568 AccessRule BL-ACI-Test-RULE-1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482569 AccessRule BL-ACI-Test-RULE-2
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482570 AccessRule BL-ACI-Test-RULE-3
 Importing Policy 005056BB-0B24-0ed3-0000-863288440513 Block_all_traffic
 API Call pulled successfully...
 Dummy policy Block_all_traffic - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-871878376972 CANESAccessPolicy
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268484623 AccessRule rule_1567845355.935381
+ACE found, adding 005056BB-0B24-0ed3-0000-000268484623 AccessRule rule_1567845355.935381
 Importing Policy 005056BB-0B24-0ed3-0000-858993538337 CS101 new policy
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482618 AccessRule er
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268481986 AccessRule coursera et al
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482583 AccessRule Giberish
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482618 AccessRule er
+ACE found, adding 005056BB-0B24-0ed3-0000-000268481986 AccessRule coursera et al
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482583 AccessRule Giberish
 Importing Policy 005056BB-0B24-0ed3-0000-863288434764 DNE Security Access Control Policy
 API Call pulled successfully...
 Dummy policy DNE Security Access Control Policy - no entries - Skipping
@@ -166,194 +166,194 @@ API Call pulled successfully...
 Dummy policy DNE Security Access Control Policy Modified - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-858993563069 EU-DC1
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482047 AccessRule ID000001
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482051 AccessRule ID000002
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482050 AccessRule ID000003
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482052 AccessRule ID000004-OpenVPN
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482047 AccessRule ID000001
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482051 AccessRule ID000002
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482050 AccessRule ID000003
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482052 AccessRule ID000004-OpenVPN
 Importing Policy 005056BB-0B24-0ed3-0000-858993581505 FTD-Mig-1554755793
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482058 AccessRule Outside_access_in_#1
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482059 AccessRule Outside_access_in_#2
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482060 AccessRule Outside_access_in_#3
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482061 AccessRule Outside_access_in_#4
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482062 AccessRule Outside_access_in_#5
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482063 AccessRule Outside_access_in_#6
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482064 AccessRule Outside_access_in_#7
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482065 AccessRule Outside_access_in_#8
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482066 AccessRule Outside_access_in_#9
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482067 AccessRule Outside_access_in_#10
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482068 AccessRule Outside_access_in_#11
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482069 AccessRule Outside_access_in_#12
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482070 AccessRule Outside_access_in_#13
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482071 AccessRule Outside_access_in_#14
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482072 AccessRule Outside_access_in_#15
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482073 AccessRule Outside_access_in_#16
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482074 AccessRule Outside_access_in_#17
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482075 AccessRule Outside_access_in_#18
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482076 AccessRule Outside_access_in_#19
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482077 AccessRule Outside_access_in_#20
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482078 AccessRule Outside_access_in_#21
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482079 AccessRule Outside_access_in_#22
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482080 AccessRule Outside_access_in_#23
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482081 AccessRule Outside_access_in_#24
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482082 AccessRule Outside_access_in_#25
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482083 AccessRule Outside_access_in_#26
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482084 AccessRule Outside_access_in_#27
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482085 AccessRule Outside_access_in_#28
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482086 AccessRule Outside_access_in_#29
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482087 AccessRule Outside_access_in_#30
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482088 AccessRule Outside_access_in_#31
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482089 AccessRule Outside_access_in_#32
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482090 AccessRule Outside_access_in_#33
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482091 AccessRule Outside_access_in_#34
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482092 AccessRule Outside_access_in_#35
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482093 AccessRule Outside_access_in_#36
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482094 AccessRule Outside_access_in_#37
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482095 AccessRule Outside_access_in_#38
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482096 AccessRule Outside_access_in_#39
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482097 AccessRule Outside_access_in_#40
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482098 AccessRule Outside_access_in_#41
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482099 AccessRule Outside_access_in_#42
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482100 AccessRule Outside_access_in_#43
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482101 AccessRule Outside_access_in_#44
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482102 AccessRule Outside_access_in_#45
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482103 AccessRule Outside_access_in_#46
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482104 AccessRule Outside_access_in_#47
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482105 AccessRule Outside_access_in_#48
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482106 AccessRule Outside_access_in_#49
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482107 AccessRule Outside_access_in_#50
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482108 AccessRule Outside_access_in_#51
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482109 AccessRule Outside_access_in_#52
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482110 AccessRule Outside_access_in_#53
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482111 AccessRule Outside_access_in_#54
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482112 AccessRule Outside_access_in_#55
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482113 AccessRule Outside_access_in_#56
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482114 AccessRule Outside_access_in_#57
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482115 AccessRule Outside_access_in_#58
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482116 AccessRule Outside_access_in_#59
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482117 AccessRule Outside_access_in_#60
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482118 AccessRule Outside_access_in_#61
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482119 AccessRule Outside_access_in_#62
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482120 AccessRule Outside_access_in_#63
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482121 AccessRule Outside_access_in_#64
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482122 AccessRule Outside_access_in_#65
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482123 AccessRule Outside_access_in_#66
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482124 AccessRule Outside_access_in_#67
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482125 AccessRule Outside_access_in_#68
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482126 AccessRule Outside_access_in_#69
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482127 AccessRule Outside_access_in_#70
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482128 AccessRule Outside_access_in_#71
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482129 AccessRule Outside_access_in_#72
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482130 AccessRule Outside_access_in_#73
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482131 AccessRule Outside_access_in_#74
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482132 AccessRule Outside_access_in_#75
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482133 AccessRule Outside_access_in_#76
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482134 AccessRule Outside_access_in_#77
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482135 AccessRule Outside_access_in_#78
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482136 AccessRule Outside_access_in_#79
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482137 AccessRule Outside_access_in_#80
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482138 AccessRule Outside_access_in_#81
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482139 AccessRule Outside_access_in_#82
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482140 AccessRule Outside_access_in_#83
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482141 AccessRule Outside_access_in_#84
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482142 AccessRule Outside_access_in_#85
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482143 AccessRule Outside_access_in_#86
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482144 AccessRule Outside_access_in_#87
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482145 AccessRule Outside_access_in_#88
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482146 AccessRule Outside_access_in_#89
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482147 AccessRule Outside_access_in_#90
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482148 AccessRule Outside_access_in_#91
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482149 AccessRule Outside_access_in_#92
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482150 AccessRule Outside_access_in_#93
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482151 AccessRule Outside_access_in_#94
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482152 AccessRule Outside_access_in_#95
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482153 AccessRule Outside_access_in_#96
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482154 AccessRule Outside_access_in_#97
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482155 AccessRule Outside_access_in_#98
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482156 AccessRule Outside_access_in_#99
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482157 AccessRule Outside_access_in_#100
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482158 AccessRule Outside_access_in_#101
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482159 AccessRule Outside_access_in_#102
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482160 AccessRule Outside_access_in_#103
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482161 AccessRule Outside_access_in_#104
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482162 AccessRule Outside_access_in_#105
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482163 AccessRule Outside_access_in_#106
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482164 AccessRule Outside_access_in_#107
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482165 AccessRule Outside_access_in_#108
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482166 AccessRule Outside_access_in_#109
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482167 AccessRule Outside_access_in_#110
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482168 AccessRule Outside_access_in_#111
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482169 AccessRule Outside_access_in_#112
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482170 AccessRule Outside_access_in_#113
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482171 AccessRule Outside_access_in_#114
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482172 AccessRule Outside_access_in_#115
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482173 AccessRule Outside_access_in_#116
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482174 AccessRule Outside_access_in_#117
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482175 AccessRule Outside_access_in_#118
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482176 AccessRule Outside_access_in_#119
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482177 AccessRule Outside_access_in_#120
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482178 AccessRule Outside_access_in_#121
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482179 AccessRule Outside_access_in_#122
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482180 AccessRule Outside_access_in_#123
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482181 AccessRule Outside_access_in_#124
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482182 AccessRule Outside_access_in_#125
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482183 AccessRule Outside_access_in_#126
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482184 AccessRule Outside_access_in_#127
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482185 AccessRule Outside_access_in_#128
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482186 AccessRule Outside_access_in_#129
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482187 AccessRule Outside_access_in_#130
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482188 AccessRule Outside_access_in_#131
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482189 AccessRule Outside_access_in_#132
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482190 AccessRule Outside_access_in_#133
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482191 AccessRule Outside_access_in_#134
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482192 AccessRule Outside_access_in_#135
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482193 AccessRule Outside_access_in_#136
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482194 AccessRule Outside_access_in_#137
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482195 AccessRule Outside_access_in_#138
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482196 AccessRule Outside_access_in_#139
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482197 AccessRule Outside_access_in_#140
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482198 AccessRule Outside_access_in_#141
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482199 AccessRule Outside_access_in_#142
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482200 AccessRule Outside_access_in_#143
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482201 AccessRule Outside_access_in_#144
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482202 AccessRule Outside_access_in_#145
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482203 AccessRule Outside_access_in_#146
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482204 AccessRule Outside_access_in_#147
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482205 AccessRule Outside_access_in_#148
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482206 AccessRule Outside_access_in_#149
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482207 AccessRule Outside_access_in_#150
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482208 AccessRule Outside_access_in_#151
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482209 AccessRule Outside_access_in_#152
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482210 AccessRule Outside_access_in_#153
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482211 AccessRule Outside_access_in_#154
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482212 AccessRule Outside_access_in_#155
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482213 AccessRule Outside_access_in_#156
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482214 AccessRule Outside_access_in_#157
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482215 AccessRule Outside_access_in_#158
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482216 AccessRule Outside_access_in_#159
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482217 AccessRule Outside_access_in_#160
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482218 AccessRule Outside_access_in_#161
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482219 AccessRule Outside_access_in_#162
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482220 AccessRule Outside_access_in_#163
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482221 AccessRule Outside_access_in_#164
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482222 AccessRule Outside_access_in_#165
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482223 AccessRule Outside_access_in_#166
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482224 AccessRule Outside_access_in_#167
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482225 AccessRule Outside_access_in_#168
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482226 AccessRule Outside_access_in_#169
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482227 AccessRule Outside_access_in_#170
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482228 AccessRule Outside_access_in_#171
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482229 AccessRule Outside_access_in_#172
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482230 AccessRule Outside_access_in_#173
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482231 AccessRule DMZ_access_in_#1
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482232 AccessRule Inside_access_out_#1
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482233 AccessRule Inside_access_out_#2
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482234 AccessRule Inside_access_out_#3
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482235 AccessRule Inside_access_out_#4
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482236 AccessRule Inside_access_out_#5
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482058 AccessRule Outside_access_in_#1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482059 AccessRule Outside_access_in_#2
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482060 AccessRule Outside_access_in_#3
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482061 AccessRule Outside_access_in_#4
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482062 AccessRule Outside_access_in_#5
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482063 AccessRule Outside_access_in_#6
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482064 AccessRule Outside_access_in_#7
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482065 AccessRule Outside_access_in_#8
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482066 AccessRule Outside_access_in_#9
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482067 AccessRule Outside_access_in_#10
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482068 AccessRule Outside_access_in_#11
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482069 AccessRule Outside_access_in_#12
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482070 AccessRule Outside_access_in_#13
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482071 AccessRule Outside_access_in_#14
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482072 AccessRule Outside_access_in_#15
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482073 AccessRule Outside_access_in_#16
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482074 AccessRule Outside_access_in_#17
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482075 AccessRule Outside_access_in_#18
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482076 AccessRule Outside_access_in_#19
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482077 AccessRule Outside_access_in_#20
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482078 AccessRule Outside_access_in_#21
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482079 AccessRule Outside_access_in_#22
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482080 AccessRule Outside_access_in_#23
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482081 AccessRule Outside_access_in_#24
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482082 AccessRule Outside_access_in_#25
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482083 AccessRule Outside_access_in_#26
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482084 AccessRule Outside_access_in_#27
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482085 AccessRule Outside_access_in_#28
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482086 AccessRule Outside_access_in_#29
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482087 AccessRule Outside_access_in_#30
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482088 AccessRule Outside_access_in_#31
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482089 AccessRule Outside_access_in_#32
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482090 AccessRule Outside_access_in_#33
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482091 AccessRule Outside_access_in_#34
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482092 AccessRule Outside_access_in_#35
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482093 AccessRule Outside_access_in_#36
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482094 AccessRule Outside_access_in_#37
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482095 AccessRule Outside_access_in_#38
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482096 AccessRule Outside_access_in_#39
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482097 AccessRule Outside_access_in_#40
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482098 AccessRule Outside_access_in_#41
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482099 AccessRule Outside_access_in_#42
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482100 AccessRule Outside_access_in_#43
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482101 AccessRule Outside_access_in_#44
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482102 AccessRule Outside_access_in_#45
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482103 AccessRule Outside_access_in_#46
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482104 AccessRule Outside_access_in_#47
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482105 AccessRule Outside_access_in_#48
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482106 AccessRule Outside_access_in_#49
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482107 AccessRule Outside_access_in_#50
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482108 AccessRule Outside_access_in_#51
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482109 AccessRule Outside_access_in_#52
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482110 AccessRule Outside_access_in_#53
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482111 AccessRule Outside_access_in_#54
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482112 AccessRule Outside_access_in_#55
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482113 AccessRule Outside_access_in_#56
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482114 AccessRule Outside_access_in_#57
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482115 AccessRule Outside_access_in_#58
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482116 AccessRule Outside_access_in_#59
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482117 AccessRule Outside_access_in_#60
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482118 AccessRule Outside_access_in_#61
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482119 AccessRule Outside_access_in_#62
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482120 AccessRule Outside_access_in_#63
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482121 AccessRule Outside_access_in_#64
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482122 AccessRule Outside_access_in_#65
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482123 AccessRule Outside_access_in_#66
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482124 AccessRule Outside_access_in_#67
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482125 AccessRule Outside_access_in_#68
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482126 AccessRule Outside_access_in_#69
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482127 AccessRule Outside_access_in_#70
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482128 AccessRule Outside_access_in_#71
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482129 AccessRule Outside_access_in_#72
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482130 AccessRule Outside_access_in_#73
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482131 AccessRule Outside_access_in_#74
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482132 AccessRule Outside_access_in_#75
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482133 AccessRule Outside_access_in_#76
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482134 AccessRule Outside_access_in_#77
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482135 AccessRule Outside_access_in_#78
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482136 AccessRule Outside_access_in_#79
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482137 AccessRule Outside_access_in_#80
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482138 AccessRule Outside_access_in_#81
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482139 AccessRule Outside_access_in_#82
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482140 AccessRule Outside_access_in_#83
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482141 AccessRule Outside_access_in_#84
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482142 AccessRule Outside_access_in_#85
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482143 AccessRule Outside_access_in_#86
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482144 AccessRule Outside_access_in_#87
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482145 AccessRule Outside_access_in_#88
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482146 AccessRule Outside_access_in_#89
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482147 AccessRule Outside_access_in_#90
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482148 AccessRule Outside_access_in_#91
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482149 AccessRule Outside_access_in_#92
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482150 AccessRule Outside_access_in_#93
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482151 AccessRule Outside_access_in_#94
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482152 AccessRule Outside_access_in_#95
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482153 AccessRule Outside_access_in_#96
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482154 AccessRule Outside_access_in_#97
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482155 AccessRule Outside_access_in_#98
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482156 AccessRule Outside_access_in_#99
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482157 AccessRule Outside_access_in_#100
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482158 AccessRule Outside_access_in_#101
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482159 AccessRule Outside_access_in_#102
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482160 AccessRule Outside_access_in_#103
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482161 AccessRule Outside_access_in_#104
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482162 AccessRule Outside_access_in_#105
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482163 AccessRule Outside_access_in_#106
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482164 AccessRule Outside_access_in_#107
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482165 AccessRule Outside_access_in_#108
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482166 AccessRule Outside_access_in_#109
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482167 AccessRule Outside_access_in_#110
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482168 AccessRule Outside_access_in_#111
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482169 AccessRule Outside_access_in_#112
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482170 AccessRule Outside_access_in_#113
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482171 AccessRule Outside_access_in_#114
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482172 AccessRule Outside_access_in_#115
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482173 AccessRule Outside_access_in_#116
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482174 AccessRule Outside_access_in_#117
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482175 AccessRule Outside_access_in_#118
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482176 AccessRule Outside_access_in_#119
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482177 AccessRule Outside_access_in_#120
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482178 AccessRule Outside_access_in_#121
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482179 AccessRule Outside_access_in_#122
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482180 AccessRule Outside_access_in_#123
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482181 AccessRule Outside_access_in_#124
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482182 AccessRule Outside_access_in_#125
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482183 AccessRule Outside_access_in_#126
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482184 AccessRule Outside_access_in_#127
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482185 AccessRule Outside_access_in_#128
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482186 AccessRule Outside_access_in_#129
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482187 AccessRule Outside_access_in_#130
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482188 AccessRule Outside_access_in_#131
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482189 AccessRule Outside_access_in_#132
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482190 AccessRule Outside_access_in_#133
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482191 AccessRule Outside_access_in_#134
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482192 AccessRule Outside_access_in_#135
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482193 AccessRule Outside_access_in_#136
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482194 AccessRule Outside_access_in_#137
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482195 AccessRule Outside_access_in_#138
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482196 AccessRule Outside_access_in_#139
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482197 AccessRule Outside_access_in_#140
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482198 AccessRule Outside_access_in_#141
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482199 AccessRule Outside_access_in_#142
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482200 AccessRule Outside_access_in_#143
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482201 AccessRule Outside_access_in_#144
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482202 AccessRule Outside_access_in_#145
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482203 AccessRule Outside_access_in_#146
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482204 AccessRule Outside_access_in_#147
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482205 AccessRule Outside_access_in_#148
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482206 AccessRule Outside_access_in_#149
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482207 AccessRule Outside_access_in_#150
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482208 AccessRule Outside_access_in_#151
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482209 AccessRule Outside_access_in_#152
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482210 AccessRule Outside_access_in_#153
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482211 AccessRule Outside_access_in_#154
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482212 AccessRule Outside_access_in_#155
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482213 AccessRule Outside_access_in_#156
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482214 AccessRule Outside_access_in_#157
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482215 AccessRule Outside_access_in_#158
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482216 AccessRule Outside_access_in_#159
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482217 AccessRule Outside_access_in_#160
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482218 AccessRule Outside_access_in_#161
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482219 AccessRule Outside_access_in_#162
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482220 AccessRule Outside_access_in_#163
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482221 AccessRule Outside_access_in_#164
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482222 AccessRule Outside_access_in_#165
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482223 AccessRule Outside_access_in_#166
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482224 AccessRule Outside_access_in_#167
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482225 AccessRule Outside_access_in_#168
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482226 AccessRule Outside_access_in_#169
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482227 AccessRule Outside_access_in_#170
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482228 AccessRule Outside_access_in_#171
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482229 AccessRule Outside_access_in_#172
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482230 AccessRule Outside_access_in_#173
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482231 AccessRule DMZ_access_in_#1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482232 AccessRule Inside_access_out_#1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482233 AccessRule Inside_access_out_#2
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482234 AccessRule Inside_access_out_#3
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482235 AccessRule Inside_access_out_#4
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482236 AccessRule Inside_access_out_#5
 Importing Policy 005056BB-0B24-0ed3-0000-858993538150 GK course
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268481984 AccessRule Encyclopedia ban
+ACE found, adding 005056BB-0B24-0ed3-0000-000268481984 AccessRule Encyclopedia ban
 Importing Policy 005056BB-0B24-0ed3-0000-858993541473 GV1-ACP
 API Call pulled successfully...
 Dummy policy GV1-ACP - no entries - Skipping
@@ -362,13 +362,13 @@ API Call pulled successfully...
 Dummy policy Leandro - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-858993545825 LuminisInida.com
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268481994 AccessRule MyLuminis-DNZ
+ACE found, adding 005056BB-0B24-0ed3-0000-000268481994 AccessRule MyLuminis-DNZ
 Importing Policy 005056BB-0B24-0ed3-0000-867583400194 Malware Detection Policy
 API Call pulled successfully...
 Dummy policy Malware Detection Policy - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-867583400625 Malware Detection Test Policy
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268483636 AccessRule Malware Inspection
+ACE found, adding 005056BB-0B24-0ed3-0000-000268483636 AccessRule Malware Inspection
 Importing Policy 005056BB-0B24-0ed3-0000-863288442593 My awesome Enterprise Corporate AC Policy
 API Call pulled successfully...
 Dummy policy My awesome Enterprise Corporate AC Policy - no entries - Skipping
@@ -386,7 +386,7 @@ API Call pulled successfully...
 Dummy policy MYBP - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-863288430641 MyCP
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482578 AccessRule Rule 1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482578 AccessRule Rule 1
 Importing Policy 005056BB-0B24-0ed3-0000-858993536235 Name1
 API Call pulled successfully...
 Dummy policy Name1 - no entries - Skipping
@@ -407,7 +407,7 @@ API Call pulled successfully...
 Dummy policy Namsdsde2 - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-858993537685 NewPolicy for CS
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268481980 AccessRule CS properties
+ACE found, adding 005056BB-0B24-0ed3-0000-000268481980 AccessRule CS properties
 Importing Policy 005056BB-0B24-0ed3-0000-863288438015 Newton_acess_policy
 API Call pulled successfully...
 Dummy policy Newton_acess_policy - no entries - Skipping
@@ -416,7 +416,7 @@ API Call pulled successfully...
 Dummy policy Newton_Policy - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-858993536912 NGtest
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268481975 AccessRule NGrule1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268481975 AccessRule NGrule1
 Importing Policy 005056BB-0B24-0ed3-0000-863288499289 Nick was here
 API Call pulled successfully...
 Dummy policy Nick was here - no entries - Skipping
@@ -440,7 +440,7 @@ API Call pulled successfully...
 Dummy policy Satec-Permit - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-863288504943 shruthitest
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482638 AccessRule shruthirule
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482638 AccessRule shruthirule
 Importing Policy 005056BB-0B24-0ed3-0000-858993551936 sjk-access-policy
 API Call pulled successfully...
 Dummy policy sjk-access-policy - no entries - Skipping
@@ -464,82 +464,82 @@ API Call pulled successfully...
 Dummy policy Strict Policy92eff - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-863288499646 SW-Access-Policy
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482624 AccessRule HTTPS Access Rule
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482624 AccessRule HTTPS Access Rule
 Importing Policy 005056BB-0B24-0ed3-0000-296352743439 TEST
 API Call pulled successfully...
 Dummy policy TEST - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-858993544821 TestInheritance
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482618 AccessRule er
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268481990 AccessRule Derived policy rule
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268481986 AccessRule coursera et al
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482583 AccessRule Giberish
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482618 AccessRule er
+ACE found, adding 005056BB-0B24-0ed3-0000-000268481990 AccessRule Derived policy rule
+ACE found, adding 005056BB-0B24-0ed3-0000-000268481986 AccessRule coursera et al
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482583 AccessRule Giberish
 Importing Policy 005056BB-0B24-0ed3-0000-863288435635 testPolicy
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482586 AccessRule branch_a
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482587 AccessRule branch_b
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482589 AccessRule grp_test
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482591 AccessRule grp_server_DC_2
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482592 AccessRule zone_A_to_B
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482594 AccessRule zone_B_to_C_with_override
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482588 AccessRule Deny_any
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482586 AccessRule branch_a
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482587 AccessRule branch_b
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482589 AccessRule grp_test
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482591 AccessRule grp_server_DC_2
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482592 AccessRule zone_A_to_B
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482594 AccessRule zone_B_to_C_with_override
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482588 AccessRule Deny_any
 Importing Policy 005056BB-0B24-0ed3-0000-863288436625 testPolicy_sub_1
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482586 AccessRule branch_a
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482587 AccessRule branch_b
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482589 AccessRule grp_test
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482591 AccessRule grp_server_DC_2
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482592 AccessRule zone_A_to_B
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482594 AccessRule zone_B_to_C_with_override
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482596 AccessRule VOIP
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482598 AccessRule VOIP (1)
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482599 AccessRule VOIP (2)
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482597 AccessRule DENY_A_to_B
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482588 AccessRule Deny_any
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482586 AccessRule branch_a
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482587 AccessRule branch_b
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482589 AccessRule grp_test
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482591 AccessRule grp_server_DC_2
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482592 AccessRule zone_A_to_B
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482594 AccessRule zone_B_to_C_with_override
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482596 AccessRule VOIP
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482598 AccessRule VOIP (1)
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482599 AccessRule VOIP (2)
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482597 AccessRule DENY_A_to_B
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482588 AccessRule Deny_any
 Importing Policy 005056BB-0B24-0ed3-0000-863288437081 testPolicy_sub_1_A
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482586 AccessRule branch_a
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482587 AccessRule branch_b
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482589 AccessRule grp_test
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482591 AccessRule grp_server_DC_2
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482592 AccessRule zone_A_to_B
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482594 AccessRule zone_B_to_C_with_override
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482596 AccessRule VOIP
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482598 AccessRule VOIP (1)
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482599 AccessRule VOIP (2)
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482601 AccessRule Anyconnect
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482602 AccessRule Out_to_in_Deny
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482597 AccessRule DENY_A_to_B
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482588 AccessRule Deny_any
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482586 AccessRule branch_a
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482587 AccessRule branch_b
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482589 AccessRule grp_test
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482591 AccessRule grp_server_DC_2
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482592 AccessRule zone_A_to_B
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482594 AccessRule zone_B_to_C_with_override
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482596 AccessRule VOIP
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482598 AccessRule VOIP (1)
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482599 AccessRule VOIP (2)
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482601 AccessRule Anyconnect
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482602 AccessRule Out_to_in_Deny
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482597 AccessRule DENY_A_to_B
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482588 AccessRule Deny_any
 Importing Policy 005056BB-0B24-0ed3-0000-858993527846 This is it
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268481962 AccessRule This is rule
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268481966 AccessRule Rule1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268481962 AccessRule This is rule
+ACE found, adding 005056BB-0B24-0ed3-0000-000268481966 AccessRule Rule1
 Importing Policy 005056BB-0B24-0ed3-0000-858993534226 ThisIsName
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268481962 AccessRule This is rule
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268481966 AccessRule Rule1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268481962 AccessRule This is rule
+ACE found, adding 005056BB-0B24-0ed3-0000-000268481966 AccessRule Rule1
 Importing Policy 005056BB-0B24-0ed3-0000-858993583622 TST_Local
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482240 AccessRule tst
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482241 AccessRule rule22
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482242 AccessRule rule22 (1)
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482561 AccessRule syslog_test
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482240 AccessRule tst
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482241 AccessRule rule22
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482242 AccessRule rule22 (1)
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482561 AccessRule syslog_test
 Importing Policy 005056BB-0B24-0ed3-0000-858993583422 TST_Theater
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482243 AccessRule any
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268482238 AccessRule rule1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482243 AccessRule any
+ACE found, adding 005056BB-0B24-0ed3-0000-000268482238 AccessRule rule1
 Importing Policy 005056BB-0B24-0ed3-0000-867583399370 Unrestricted Policy
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268483628 AccessRule Rule1
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268483629 AccessRule Unrestricted PolicyRule587
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268483630 AccessRule Unrestricted PolicyRule603
+ACE found, adding 005056BB-0B24-0ed3-0000-000268483628 AccessRule Rule1
+ACE found, adding 005056BB-0B24-0ed3-0000-000268483629 AccessRule Unrestricted PolicyRule587
+ACE found, adding 005056BB-0B24-0ed3-0000-000268483630 AccessRule Unrestricted PolicyRule603
 Importing Policy 005056BB-0B24-0ed3-0000-858993570117 VpaslavTest
 API Call pulled successfully...
 Dummy policy VpaslavTest - no entries - Skipping
 Importing Policy 005056BB-0B24-0ed3-0000-858993537963 Wiki
 API Call pulled successfully...
-Objectfound, adding 005056BB-0B24-0ed3-0000-000268481982 AccessRule Wikipedia
+ACE found, adding 005056BB-0B24-0ed3-0000-000268481982 AccessRule Wikipedia
 Retrieving ACE 005056BB-0B24-0ed3-0000-000268484624 Product_Vpn_TEST
 API Call pulled successfully...
 Retrieving ACE 005056BB-0B24-0ed3-0000-000268484626 Product_Vpn_TEST (1)
@@ -1070,3 +1070,6 @@ Retrieving ACE 005056BB-0B24-0ed3-0000-000268483630 Unrestricted PolicyRule603
 API Call pulled successfully...
 Retrieving ACE 005056BB-0B24-0ed3-0000-000268481982 Wikipedia
 API Call pulled successfully...
+TADA...
+
+Process finished with exit code 0
