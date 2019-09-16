@@ -1,9 +1,3 @@
-<html>
-  <head>
-    {% include head.html %}
-    {% seo %}
-  </head>
-</html>
 # Firepower Management Console Access Policy Review Generator
 ----------------------------------------------------------------------------------------------------------------------------------------
 # Release Name: BlackLip
