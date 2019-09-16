@@ -123,7 +123,7 @@ def getAccessPolicy(fmcIP, auth_token, domain_uuid, api_function, container_uuid
     if apiResp.status_code is 200:
         print('API Call pulled successfully...')
     elif apiResp.status_code is 404:
-        print('Object Not Found... No worry it\'s most likely bug id xxxx... Result: Ignore...')
+        print('Object Not Found... No worry it\'s most likely bug id CSCvq67271... Result: Ignore...')
         return None
     elif apiResp.status_code is 429:
         print('FMC Sent HTTP 429, pausing for', int(65 - ((time.time() - timeStamp)%60)), '... Function: getAccessPolicy... Result: Delay, sit tight...')
@@ -144,11 +144,15 @@ def getAccessPolicy(fmcIP, auth_token, domain_uuid, api_function, container_uuid
             if not plcID:
                 print('Policy found, adding', element['id'], element['type'], element['name'])
             else:
-                print('ACE found, adding', element['id'], element['type'], element['name'])
+                print('ACE found, adding', element['id'], element['type'], plcName+ '/' + element['name'])
             policyPair = {'TAG_NAME' : tagName, 'TAG_ID' : tagID, 'PLC_NAME' : plcName, 'PLC_ID' : plcID, 'DOMAIN_UUID' : domain_uuid, 'OBJECT_TYPE': element['type'], 'OBJECT_ID' : element['id'], 'OBJECT_NAME' : element['name']}
             entryBuilder.append(policyPair)
     if len(entryBuilder) is 0:
         print('Dummy policy', plcName,'- no entries - Skipping')
+    else:
+        print('Data Extracted...')
+
+
     return entryBuilder
 
 
@@ -169,15 +173,16 @@ def getACLDetails(fmcIP, auth_token, domain_uuid, api_function, container_uuid, 
 
     if apiResp.status_code == 200:
         print('API Call pulled successfully...')
-    elif apiResp.status_code == 404 or 500:
-        print('Object Not Found... No worry it\'s most likely bug id xxxx... Result: Ignore...')
+    elif apiResp.status_code == 404 or apiResp.status_code == 500:
+        print('Object Not Found... No worry it\'s most likely bug id CSCvq67271... Result: Ignore...', apiResp.status_code)
         return None
     elif apiResp.status_code == 429:
-        print('FMC Sent HTTP 429, pausing for', int(65 - ((time.time() - timeStamp)%60)), '... Function: getACLDetails... Result: Delay, sit tight...')
+        print('FMC Sent HTTP 429, pausing for', int(65 - ((time.time() - timeStamp)%60)), ' seconds... Function: getACLDetails... Result: Delay, sit tight...')
         time.sleep(65 - ((time.time() - timeStamp)%60))
         print('Proceeding with changes...')
         timeStamp = time.time()
         apiResp = getACLDetails(fmcIP, auth_token, domain_uuid, api_function, container_uuid, api_subfunction, object_uuid, tagName, plcName)
+        return apiResp
     elif apiResp.status_code == 401:
         sys.exit('FMC responded with Unauthorized Access HTTP 401... Function: getACLDetails... Result: GameStopper...')
     # elif apiResp.status_code == 500:
@@ -288,7 +293,8 @@ def getACLDetails(fmcIP, auth_token, domain_uuid, api_function, container_uuid, 
             for element in appsElement['applications']:
                 pairingList = [element['type'], element['name']]
                 appsList.append(pairingList)
-# getACLDetails(fmcIP, auth_token, api_function, container_uuid, api_subfunction, object_uuid, domain_uuid, plcID, tagName, plcName):
+
+    print('Data Extraction completed successfully... Next')
 
     return {'DOMAIN_ID' :domain_uuid, 'TAG_ID' : tagName, 'PLC_ID': container_uuid, 'PLC_NAME': plcName,
             'OBJECT_ID': object_uuid, 'OBJECT_NAME' : json_resp['name'],'OBJECT_ENABLED' : json_resp['enabled'],
@@ -322,8 +328,8 @@ def processedACLEntries(aceEntries):
 
 
 def writeReviewFile(aceEntries):
-    fileName = 'FirewallReviews' + str(datetime.datetime.today()) + '.txt'
-    reportFile = open(fileName, "+w")
+    fileName = 'FirewallReviews.txt' #+ str(datetime.datetime.today()) + '.txt'
+    reportFile = open(fileName, "w")
     reportFile.write(processedACLEntries(aceEntries))
 
 
@@ -345,6 +351,7 @@ accessVar = setScriptVariables() # Contain Sever IP 'FMC_IP' and AuthToken 'FMC_
 
 print('Authentication Token retrieved: ********-****-****-****-****'+ str(accessVar['FMC_AUTHTOKEN'])[-8:])
 
+print('Generating Access Policy list...')
 accessPolicy = getAccessPolicy(accessVar['FMC_IP'], accessVar['FMC_AUTHTOKEN'], domain_uuid, "/policy/accesspolicies", '', '', accessVar['ORG_ID'], domain_uuid,'','')
 
 for element in accessPolicy:
@@ -358,7 +365,7 @@ del element
 
 for element in aclEntries:
     # getACLDetails(auth_token, api_function, container_uuid, api_subfunction, object_uuid, tagName, plcName):
-    print('Retrieving ACE', element['OBJECT_ID'], element['OBJECT_NAME'])
+    print('Retrieving ACE', element['OBJECT_ID'], element['PLC_NAME'] + '/' + element['OBJECT_NAME'])
     aclEntry = getACLDetails(accessVar['FMC_IP'], accessVar['FMC_AUTHTOKEN'], domain_uuid, "/policy/accesspolicies/",
                              element['PLC_ID'], '/accessrules/', element['OBJECT_ID'], element['TAG_NAME'], element['PLC_NAME'])
     if aclEntry:
