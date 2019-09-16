@@ -1,159 +1,199 @@
-from __future__ import print_function
+# Version 201909.NEXT
+# Release Candidate
 
-import datetime
-import time
-
-from numpy import *
-
-import sys
 import json
+import os
+import sys
+import time
+import datetime
 import requests
+import tkinter as tk
 
+# Disable SSL verifications warning
 import urllib3
+
 urllib3.disable_warnings()
-# System Access Global Variables!
-server = None
-domain_uuid = None
-global urlReq
-urlReq = 1
 
-def setSysAccess():
-    username = 'xxxxxx'
-    if len(sys.argv) > 1:
-        username = sys.argv[1]
 
-    password = 'xxxxxxxx'
-    if len(sys.argv) > 2:
-        password = sys.argv[2]
-
-    global server
+# Begin Staging The Script by Collecting Access Information and generating proper tokens
+def getAuthToken(fmcIP, fmcUser, fmcPass):
     global domain_uuid
-
-    server = "xxxxxxxx"
-    domain_uuid = "e276abec-e0f2-11e3-8169-6d9ed49b625f"
-
-    r = None
+    url = 'https://' + fmcIP + '/api/fmc_platform/v1/auth/generatetoken'
     headers = {'Content-Type': 'application/json'}
-    api_auth_path = "/api/fmc_platform/v1/auth/generatetoken"
-    auth_url = server + api_auth_path
     try:
-        # 2 ways of making a REST call are provided:
-        # One with "SSL verification turned off" and the other with "SSL verification turned on".
-        # The one with "SSL verification turned off" is commented out. If you like to use that then
-        # uncomment the line where verify=False and comment the line with =verify='/path/to/ssl_certificate'
-        # REST call with SSL verification turned off:
-        # r = requests.post(auth_url, headers=headers, auth=requests.auth.HTTPBasicAuth(username,password), verify=False)
-        # REST call with SSL verification turned on: Download SSL certificates from your FMC first and provide its path for verification.
-        r = requests.post(auth_url, headers=headers, auth=requests.auth.HTTPBasicAuth(username, password), verify=False)
+        reqResp = requests.post(url, headers=headers, auth=requests.auth.HTTPBasicAuth(fmcUser, fmcPass), verify=False)
 
-        auth_headers = r.headers
-        auth_token = auth_headers.get('X-auth-access-token', default=None)
-        print('Auth Token: ', auth_token)
-        if auth_token is None:
-            print("auth_token not found. Exiting...")
-            sys.exit()
-    except Exception as err:
-        print("Error in generating auth token --> " + str(err))
-        sys.exit()
-    return auth_token
+    except Exception as e:
+        print('Function getAuthToken failed...', e)
+        sys.exit('Authentication Failure: Failed to retrieve token... Error Result: GameStopper')
+    else:
+        if reqResp.status_code == 401:
+            sys.exit('FMC responded with Unauthorized Access HTTP 401... Function: getAuthToken... Result: GameStopper...')
+        domain_uuid = reqResp.headers.get('DOMAIN_UUID', default=None)
+        return reqResp.headers.get('X-auth-access-token', default=None)
+
+    sys.exit('How Did I get here???... Function: getAuthToken... Error Result: GameStopper')
 
 
-def getAccessPolicy(auth_token, api_function, container_uuid, api_subfunction, tag):
-    global urlReq
-    if urlReq >= 119:
-        time.sleep(65)
-        urlReq = 1
-    entryBuilder = []
-    headers = {'Content-Type': 'application/json', 'X-auth-access-token': auth_token}
-    api_path = "/api/fmc_config/v1/domain/" + domain_uuid + api_function + container_uuid + api_subfunction  # param
-    url = server + api_path + '?offset=0&limit=1000'
-    if url[-1] == '/':
-        url = url[:-1]
+def inputWindow():
+    configData = {}
+    master = tk.Tk()
+    master.title('FMC ACP Review by Sam Jbori')
+    tk.Label(master, text='FMC IP   :').grid(row=0)
+    tk.Label(master, text='User Name:').grid(row=1)
+    tk.Label(master, text='Password :').grid(row=2)
+    tk.Label(master, text='Org Name :').grid(row=3)
+    fmcIP = tk.Entry(master)
+    fmcIP.grid(row=0, column=1)
+    uName = tk.Entry(master)
+    uName.grid(row=1, column=1)
+    pWord = tk.Entry(master)
+    pWord.grid(row=2, column=1)
+    #pWord.config(show='W')
+    orgID = tk.Entry(master)
+    orgID.grid(row=3, column=1)
 
-    try:
-        # REST call with SSL verification turned off:
-        # r = requests.get(url, headers=headers, verify=False)
-        # REST call with SSL verification turned on:
-        reqRes = requests.get(url, headers=headers, verify=False)
-        urlReq += 1
-        status_code = reqRes.status_code
-        resp = reqRes.text
-        if status_code is 200:
-            print("GET successful. Response data --> Container: ", container_uuid)
-            json_resp = json.loads(resp)
+    tk.Button(master, text='Okay', command=master.quit).grid(row=10, column=10, sticky=tk.W, pady=4)
+    master.mainloop()
+
+    configData.update(FMC_IP= fmcIP.get())
+    configData.update(FMC_USER= uName.get())
+    configData.update(FMC_PASS= pWord.get())
+    configData.update(ORG_ID= orgID.get())
+
+    return configData  # dict
+
+
+def setScriptVariables():
+    global configFile
+    rebuildConfigData = False
+    print('Checking for config file...')
+    if os.path.isfile(configFile):
+        print('Config file found, processing saved information...')
+        with open(configFile, 'r') as config_file:
+            configData = json.loads(config_file.read())
+        if 'FMC_IP' in configData and 'FMC_USER' in configData and 'FMC_PASS' in configData and 'ORG_ID' in configData:
+            print('Config file loaded... DOESN\'T GRANTEES CORRECT DATA, DELETE config.json TO START FRESH...')
         else:
-            reqRes.raise_for_status()
-            print("Error occurred in GET --> " + resp)
-    except requests.exceptions.HTTPError as err:
-        print("Error in connection --> " + str(err))
-    finally:
-        if reqRes: reqRes.close()
+            print('Corrupted config file...\nRebuilding Config File, press CTRL + C to cancel...')
+            time.sleep(5)
+            print('Rebuilding')
+            rebuildConfigData = True
+
+    else:
+        print('No config file found, using user input...')
+        rebuildConfigData = True
+
+    if rebuildConfigData:
+        # configData = {
+        #     'FMC_IP': '',
+        #     'FMC_USER': '',
+        #     'FMC_PASS': '',
+        #     'ORG_ID':'',
+        # }
+        configData = inputWindow()
+        with open(configFile, '+w') as output_file:
+            json.dump(configData, output_file, indent=4)
+
+    configData.update(FMC_AUTHTOKEN=getAuthToken(configData['FMC_IP'], configData['FMC_USER'], configData['FMC_PASS']))
+    del configData['FMC_USER'] # remove user name
+    del configData['FMC_PASS'] # and password from the program
+
+    return configData
+# End Staging The Script by Collecting Access Information and generating proper tokens
+# The result should be 2 variables, accessVar and domain_UUID
+
+#Begin Policy and Entry Data Collection Section
+
+def getAccessPolicy(fmcIP, auth_token, domain_uuid, api_function, container_uuid, api_subfunction, tagName, tagID, plcName, plcID):
+
+    entryBuilder = []
+    global timeStamp
+    api_path = "/api/fmc_config/v1/domain/" + domain_uuid + api_function + container_uuid + api_subfunction  # param
+    url = 'https://' + fmcIP + api_path + '?offset=0&limit=1000'
+    headers = {'Content-Type': 'application/json', 'X-auth-access-token': auth_token}
+
+    try:
+        apiResp = requests.get(url, headers=headers, verify=False, )
+
+    except Exception as e:
+        print(e)
+        sys.exit('Error unknown to the function logic... Function: getAccessPolicy... Result: GameStopper...\n')
+
+    if apiResp.status_code is 200:
+        print('API Call pulled successfully...')
+    elif apiResp.status_code is 404:
+        print('Object Not Found... No worry it\'s most likely bug id xxxx... Result: Ignore...')
+        return None
+    elif apiResp.status_code is 429:
+        print('FMC Sent HTTP 429, pausing for', int(65 - ((time.time() - timeStamp)%60)), '... Function: getAccessPolicy... Result: Delay, sit tight...')
+        time.sleep(65 - ((time.time() - timeStamp)%60))
+        print('Proceeding with changes...')
+        timeStamp = time.time()
+        apiResp = getAccessPolicy(fmcIP, domain_uuid, auth_token, api_function, container_uuid, api_subfunction, tagName, tagID, plcName, plcID)
+    elif apiResp.status_code is 401:
+        sys.exit('FMC responded with Unauthorized Access HTTP 401... Function: getAccessPolicy... Result: GameStopper...')
+
+    else:
+        print('Getting HTTP', apiResp.status_code)
+        sys.exit('Error unknown to the function logic... Function: getAccessPolicy... Result: GameStopper...\n')
+
+    json_resp = json.loads(apiResp.text)
     if 'items' in json_resp:
         for element in json_resp['items']:
-            policyPair = [tag, container_uuid, element['id'], element['name']]
+            if not plcID:
+                print('Policy found, adding', element['id'], element['type'], element['name'])
+            else:
+                print('ACE found, adding', element['id'], element['type'], element['name'])
+            policyPair = {'TAG_NAME' : tagName, 'TAG_ID' : tagID, 'PLC_NAME' : plcName, 'PLC_ID' : plcID, 'DOMAIN_UUID' : domain_uuid, 'OBJECT_TYPE': element['type'], 'OBJECT_ID' : element['id'], 'OBJECT_NAME' : element['name']}
             entryBuilder.append(policyPair)
-
+    if len(entryBuilder) is 0:
+        print('Dummy policy', plcName,'- no entries - Skipping')
     return entryBuilder
 
 
-def getACLDetails(auth_token, api_function, container_uuid, api_subfunction, object_uuid, tag):
-    global urlReq
-    if urlReq >= 119:
-        time.sleep(65)
-        urlReq = 1
-    entryBuilder = []
+def getACLDetails(fmcIP, auth_token, domain_uuid, api_function, container_uuid, api_subfunction, object_uuid, tagName, plcName):
+
+    global timeStamp
+
+    global e500
     headers = {'Content-Type': 'application/json', 'X-auth-access-token': auth_token}
     api_path = "/api/fmc_config/v1/domain/" + domain_uuid + api_function + container_uuid + api_subfunction + object_uuid
-    url = server + api_path
-    if url[-1] == '/':
-        url = url[:-1]
+    url = 'https://' + fmcIP + api_path
 
     try:
-        # REST call with SSL verification turned off:
-        # r = requests.get(url, headers=headers, verify=False)
-        # REST call with SSL verification turned on:
-        reqRes = requests.get(url, headers=headers, verify=False)
-        urlReq += 1
-        status_code = reqRes.status_code
-        resp = reqRes.text
+        apiResp = requests.get(url, headers=headers, verify=False, )
+    except Exception as e:
+        print(e)
+        sys.exit('Error unknown to the function logic... Function: getACLDetails... Result: GameStopper...\n')
 
-
-        if status_code is 200:
-            print("GET successful. Response data --> Object UUID", object_uuid)
-            json_resp = json.loads(resp)
-        else:
-            reqRes.raise_for_status()
-            print("Error occurred in GET --> " + resp)
-    except requests.exceptions.HTTPError as err:
-        print("Error in connection --> " + str(err))
-    finally:
-        if reqRes: reqRes.close()
-    if status_code == 429:
-        time.sleep(65)
-        urlReq = 1
-        try:
-            # REST call with SSL verification turned off:
-            # r = requests.get(url, headers=headers, verify=False)
-            # REST call with SSL verification turned on:
-            reqRes = requests.get(url, headers=headers, verify=False)
-            urlReq = 1
-            status_code = reqRes.status_code
-            resp = reqRes.text
-
-
-            if status_code is 200:
-                print("GET successful. Response data --> Object UUID", object_uuid)
-                json_resp = json.loads(resp)
-            else:
-                reqRes.raise_for_status()
-                print("Error occurred in GET --> " + resp)
-        except requests.exceptions.HTTPError as err:
-            print("Error in connection --> " + str(err))
-        finally:
-            if reqRes: reqRes.close()
-
-    if status_code == 404:
+    if apiResp.status_code == 200:
+        print('API Call pulled successfully...')
+    elif apiResp.status_code == 404 or 500:
+        print('Object Not Found... No worry it\'s most likely bug id xxxx... Result: Ignore...')
         return None
+    elif apiResp.status_code == 429:
+        print('FMC Sent HTTP 429, pausing for', int(65 - ((time.time() - timeStamp)%60)), '... Function: getACLDetails... Result: Delay, sit tight...')
+        time.sleep(65 - ((time.time() - timeStamp)%60))
+        print('Proceeding with changes...')
+        timeStamp = time.time()
+        apiResp = getACLDetails(fmcIP, auth_token, domain_uuid, api_function, container_uuid, api_subfunction, object_uuid, tagName, plcName)
+    elif apiResp.status_code == 401:
+        sys.exit('FMC responded with Unauthorized Access HTTP 401... Function: getACLDetails... Result: GameStopper...')
+    # elif apiResp.status_code == 500:
+    #     e500 += 1
+    #     if e500 > 49:
+    #         sys.exit('Error HTTP 500 occur 50 times, time to shut this babe down')
+    #     else:
+    #         print('Getting HTTP 500', 50 - e500, 'remaining to shut this process down...')
+    #         time.sleep(10)
+    #         getACLDetails(fmcIP, auth_token, domain_uuid, api_function, container_uuid, api_subfunction, object_uuid,
+    #                       tagName, plcName)
+    else:
+        print('Response code HTTP', apiResp.status_code)
+        sys.exit('Error unknown to the function logic... Function: getACLDetails... Result: GameStopper...\n')
+
+    json_resp = json.loads(apiResp.text)
     userList = []
     if 'users' in json_resp:
         userElement = json_resp['users']
@@ -168,9 +208,12 @@ def getACLDetails(auth_token, api_function, container_uuid, api_subfunction, obj
             for element in urlElement['literals']:
                 pairingList = [element['type'], element['url']]
                 urlList.append(pairingList)
-        # for element in urlElement['urlCategoriesWithReputation']:
-        #     pairingList = [element['type'], element['url']]
-        #     urlList.append(pairingList)
+        if 'urlCategoriesWithReputation' in urlElement:
+            for catagories in urlElement['urlCategoriesWithReputation']:
+                if 'catagory' in catagories:
+                    for element in catagories:
+                        pairingList = [element['type'], element['name']]
+                        urlList.append(pairingList)
 
     srcZoneList = []
     if 'sourceZones' in json_resp:
@@ -215,12 +258,12 @@ def getACLDetails(auth_token, api_function, container_uuid, api_subfunction, obj
         srcPrtElement = json_resp['sourcePorts']
         if 'literals' in srcPrtElement:
             for element in srcPrtElement['literals']:
-                    pairingList = [element['protocol'], element['port']]
-                    srcPrtList.append(pairingList)
+                pairingList = [element['protocol'], element['port']]
+                srcPrtList.append(pairingList)
         if 'objects' in srcPrtElement:
-                for element in srcPrtElement['objects']:
-                    pairingList = [element['type'], element['name']]
-                    srcPrtList.append(pairingList)
+            for element in srcPrtElement['objects']:
+                pairingList = [element['type'], element['name']]
+                srcPrtList.append(pairingList)
 
     dstPrtList = []
     if 'destinationPorts' in json_resp:
@@ -230,9 +273,9 @@ def getACLDetails(auth_token, api_function, container_uuid, api_subfunction, obj
                 pairingList = [element['protocol'], element['port']]
                 dstPrtList.append(pairingList)
         if 'objects' in dstPrtElement:
-                for element in dstPrtElement['objects']:
-                    pairingList = [element['type'], element['name']]
-                    dstPrtList.append(pairingList)
+            for element in dstPrtElement['objects']:
+                pairingList = [element['type'], element['name']]
+                dstPrtList.append(pairingList)
 
     appsList = []
     if 'applications' in json_resp:
@@ -245,87 +288,81 @@ def getACLDetails(auth_token, api_function, container_uuid, api_subfunction, obj
             for element in appsElement['applications']:
                 pairingList = [element['type'], element['name']]
                 appsList.append(pairingList)
+# getACLDetails(fmcIP, auth_token, api_function, container_uuid, api_subfunction, object_uuid, domain_uuid, plcID, tagName, plcName):
 
-    return [tag, container_uuid, json_resp['name'], json_resp['action'], srcZoneList, dstZoneList, srcNetList,
-            dstNetList, srcPrtList, dstPrtList, userList, urlList, appsList, json_resp['enabled']]
+    return {'DOMAIN_ID' :domain_uuid, 'TAG_ID' : tagName, 'PLC_ID': container_uuid, 'PLC_NAME': plcName,
+            'OBJECT_ID': object_uuid, 'OBJECT_NAME' : json_resp['name'],'OBJECT_ENABLED' : json_resp['enabled'],
+            'ZN_SRC' : srcZoneList, 'ZN_DST' : dstZoneList, 'SRC_NET' : srcNetList, 'DST_NET' : dstNetList,
+            'PORT_SRC' : srcPrtList, 'PORT_DST' : dstPrtList, 'USERS' : userList, 'URLS' : urlList, 'APPS' : appsList}
 
-def processedACLEntries():
+def processedACLEntries(aceEntries):
 
-    processedText = 'Enabled\tPolicy Name\tPolicy ID\tRule Name\tAction\tSource Zone\tDestination Zone\tSource Network\tDestination Network\tSource Port\tDestination Port\tUsers\tURL\tApplication\n'
-    for element in aclDetails:
-        processedText += str(element[13]) + '\t'
-        processedText += str(element[0]) + '\t'
-        processedText += str(element[1]) + '\t'
-        processedText += str(element[2]) + '\t'
-        processedText += str(element[3]) + '\t'
-        for component in element[4]:
-            processedText += str(component[1]) + ','
-        processedText += '\t'
-        for component in element[5]:
-            processedText += str(component[1]) + ','
-        processedText += "\t"
-        for component in element[6]:
-            processedText += str(component[1]) + ','
-        processedText += "\t"
-        for component in element[7]:
-            processedText += str(component[1]) + ','
-        processedText += "\t"
-        for component in element[8]:
-            processedText += str(component[1]) + ','
-        processedText += "\t"
-        for component in element[9]:
-            processedText += str(component[1]) + ','
-        processedText += "\t"
-        for component in element[10]:
-            processedText += str(component[1]) + ','
-        processedText += "\t"
-        for component in element[11]:
-            processedText += str(component[1]) + ','
-        processedText += "\t"
-        for component in element[12]:
-            processedText += str(component[1]) + ','
-        processedText += "\n"
+    processedText = 'Orginization\tDomain ID\tPolicy Name\tPolicy ID\tRule\'s Name\tRule\'s ID\tEnabled\tSource Zone\t' \
+                    'Destination Zone\tSource Network\tDestination Network\tSource Port\tDestination Port\tUsers\tURL\t' \
+                    'Applications\n'
+    for entry in aceEntries:
+        processedText += str(entry['TAG_ID']) + '\t' + \
+                         str(entry['DOMAIN_ID']) + '\t' + \
+                         str(entry['PLC_NAME']) + '\t' +  \
+                         str(entry['PLC_ID']) + '\t' + \
+                         str(entry['OBJECT_NAME']) + '\t' + \
+                         str(entry['OBJECT_ID']) + '\t' + \
+                         str(entry['OBJECT_ENABLED']) + '\t' + \
+                         str(entry['ZN_SRC']) + '\t' + \
+                         str(entry['ZN_DST']) + '\t' + \
+                         str(entry['SRC_NET']) + '\t' + \
+                         str(entry['DST_NET']) + '\t' + \
+                         str(entry['PORT_SRC']) + '\t' + \
+                         str(entry['PORT_DST']) + '\t' + \
+                         str(entry['USERS']) + '\t' + \
+                         str(entry['URLS']) + '\t' + \
+                         str(entry['APPS']) + '\n'
 
     return processedText
 
 
-
-def writeFile():
-    fileLocation = 'c:\\'
-    todaysDate = datetime.date
-    fileName = 'FirewallReviews' + str(todaysDate.today()) + '.txt'
+def writeReviewFile(aceEntries):
+    fileName = 'FirewallReviews' + str(datetime.datetime.today()) + '.txt'
     reportFile = open(fileName, "+w")
-
-    reportFile.write(processedACLEntries())
-
+    reportFile.write(processedACLEntries(aceEntries))
 
 
-
-# MAIN
 
 if __name__ is not '__main__':
     sys.exit()
 
-auth_token = setSysAccess()
-accessPolicy = []
-aclEntries = []
-accessPolicy = getAccessPolicy(auth_token, "/policy/accesspolicies", '', '', 'MMI')
+timeStamp = time.time()  # Recover mechanism against HTTP 429 by the FMC
+
+# System Access Global Variables!
+domain_uuid = None          # FMC Global Domain UUID
+configFile = 'config.json'  # Configfile name
+accessPolicy = []           # Access Policy list of names, UUID,
+aclEntries = []             # ACL Entries: Parent Policy, Parent UUID, Policy Name, UUID
+aclDetails = []             # ACL Entries Detailed: Parent Policy, Parent UUID, Self Name, Self UUID,
+                            # Zone SRC/DST, IP SRC/DST, Port SRC/DST, App, URL/Car, User/Group
+
+accessVar = setScriptVariables() # Contain Sever IP 'FMC_IP' and AuthToken 'FMC_AUTHTOKEN'
+
+print('Authentication Token retrieved: ********-****-****-****-****'+ str(accessVar['FMC_AUTHTOKEN'])[-8:])
+
+accessPolicy = getAccessPolicy(accessVar['FMC_IP'], accessVar['FMC_AUTHTOKEN'], domain_uuid, "/policy/accesspolicies", '', '', accessVar['ORG_ID'], domain_uuid,'','')
 
 for element in accessPolicy:
-    aclEntry = getAccessPolicy(auth_token, "/policy/accesspolicies/", element[2], '/accessrules', element[3])
+    print('Importing Policy', element['OBJECT_ID'], element["OBJECT_NAME"])
+    aclEntry = getAccessPolicy(accessVar['FMC_IP'], accessVar['FMC_AUTHTOKEN'], domain_uuid, "/policy/accesspolicies/", element['OBJECT_ID'], '/accessrules', element['TAG_NAME'], element['TAG_ID'],element['OBJECT_NAME'], element['OBJECT_ID'])
     if aclEntry:
         for element in aclEntry:
             aclEntries.append(element)
-aclDetails = []
+del aclEntry
+del element
+
 for element in aclEntries:
-    # getACLDetails(auth_token, api_function, container_uuid, api_subfunction, object_uuid, tag):
-    item = getACLDetails(auth_token, "/policy/accesspolicies/", element[1], '/accessrules/', element[2], element[0])
-    if item:
-        aclDetails.append(item)
+    # getACLDetails(auth_token, api_function, container_uuid, api_subfunction, object_uuid, tagName, plcName):
+    print('Retrieving ACE', element['OBJECT_ID'], element['OBJECT_NAME'])
+    aclEntry = getACLDetails(accessVar['FMC_IP'], accessVar['FMC_AUTHTOKEN'], domain_uuid, "/policy/accesspolicies/",
+                             element['PLC_ID'], '/accessrules/', element['OBJECT_ID'], element['TAG_NAME'], element['PLC_NAME'])
+    if aclEntry:
+        aclDetails.append(aclEntry)
+writeReviewFile(aclDetails)
 
-x = open('file.text', '+w')
-x.write(str(aclDetails))
-writeFile()
-
-
-print('done')
+print('TADA...')
